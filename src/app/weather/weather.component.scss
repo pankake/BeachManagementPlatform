@@ -1,16 +1,20 @@
 @import 'src/app/styles/global/_variables.scss';
-@import 'src/app/styles/global/_placeholders.scss';
 
-.btn-outline-dark {
-  font-size: $showcase-font-size;
+input, input::-webkit-input-placeholder {
   width: fit-content;
+  font-size: $alert-font-size;
+  text-align: center;
+  line-height: 3;
   margin-left: auto;
   margin-right: auto;
 }
 
-input {
-  font-size: $showcase-font-size;
-  text-align: center;
+.btn-outline-dark {
+  font-size: $alert-font-size;
+  height: fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 small {

@@ -1,5 +1,4 @@
 @import 'src/app/styles/global/_variables.scss';
-@import 'src/app/styles/global/_placeholders.scss';
 @import '../styles/global/mixins';
 
 .banner-button-notify {
@@ -124,12 +123,12 @@
 
 @media screen and (max-width: 1080px) and (min-width: 811px) {
   .banner, .banner-button {
-    font-size: calc(3px + 2.8vw);
+    font-size: $alert-font-size;
   }
 }
 
 @media screen and (max-width: 1280px) and (min-width: 1081px) {
   .banner, .banner-button {
-    font-size: calc(3px + 2vw);
+    font-size: $alert-font-size;
   }
 }
