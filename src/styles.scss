@@ -1,0 +1,24 @@
+@import "../node_modules/bootstrap-scss/bootstrap";
+@import "src/app/styles/global/variables";
+@import "app/styles/global/mixins";
+
+
+body {
+  //background: linear-gradient(to right top, $turquoise, $blue);
+  background-image: linear-gradient(to right, $turquoise , $blue);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: SansSerif, "SansSerif", sans-serif;}
+
+.successSnack {
+  @include styleSnack($success-bg, $success-text);
+}
+
+.warningSnack {
+  @include styleSnack($warning-bg, $warning-text);
+}
+
+.errorSnack {
+  @include styleSnack($danger-bg, $danger-text);
+}
