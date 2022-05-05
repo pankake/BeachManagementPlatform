@@ -1,0 +1,39 @@
+@import "src/app/styles/global/variables";
+
+@mixin styleSnack($bg_color, $font-color) {
+  background-color: $bg_color;
+  color: $font-color;
+
+  border: 1px solid;
+  box-shadow: 5px 10px;
+
+  max-width: 90% !important;
+  max-height: 30% !important;
+  margin-left: auto !important; // center align from left
+  margin-right: auto !important; // center align from right
+  margin-bottom: 1rem !important;
+  padding: 10px !important; // spacing between the text and boundary
+  font-size: $snackbar-font-size !important;
+
+  @media screen and (max-width: 360px) {
+    margin-bottom: 20rem !important;
+  }
+
+  @media screen and (max-width: 412px) and (min-width: 361px) {
+    /* Here are some changes*/
+    margin-bottom: 30rem !important;
+  }
+
+  @media screen and (max-width: 810px) and (min-width: 413px) {
+    margin-bottom: 55rem !important;
+  }
+
+  @media screen and (max-width: 1080px) and (min-width: 811px) {
+    margin-bottom: 20em !important;
+  }
+
+  @media screen and (max-width: 1280px) and (min-width: 1081px) {
+    margin-bottom: 15em !important;
+  }
+}
+

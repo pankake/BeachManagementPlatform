@@ -1,0 +1,84 @@
+@import 'src/app/styles/global/_variables.scss';
+@import 'src/app/styles/global/_placeholders.scss';
+@import '../styles/global/mixins';
+
+.nav-links {
+  display: flex;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  font-family: $font-family-sans-serif;
+  position:sticky;
+  top:0;
+  background-color: $bars-color;
+  overflow: hidden;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  min-height: 1.5em;
+  height: 8vh;
+  max-height: calc(35px + 1vh);
+  z-index: 100;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {             //sono solo le icone
+  float: left;
+  color: $fontcolor;
+  font-size: $icons-size;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: $topnav-a-hover-bg;
+  color: $topnav-a-hover;   //colore icona e testo quando gli vai sopra
+    i{ color:black }
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {          //colore icona e testo quando è active
+  background: $topnav-a-active-bg;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+  //filter: brightness(85%);
+  color: $topnav-a-hover-bg;;
+  i{ color:$topnav-a-hover-bg }
+}
+
+.topnav .disappear {
+  color: $fontcolor;
+  text-align: center;
+  text-decoration: none;
+  font-size: $icons-size;
+  /*font-size: 17px;*/
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 479px) {
+
+  .topnav .disappear {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 720px) {
+/*  .topnav{
+    height: 25%;
+  }*/
+
+  .topnav .disappear {
+    text-decoration: none;
+    /*font-size:12px;*/
+  }
+}
+
+@media screen and (min-width: 721px){
+  .topnav .disappear {
+
+  }
+}

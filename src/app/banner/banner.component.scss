@@ -1,0 +1,135 @@
+@import 'src/app/styles/global/_variables.scss';
+@import 'src/app/styles/global/_placeholders.scss';
+@import '../styles/global/mixins';
+
+.banner-button-notify {
+  color: #004085;
+  &:hover {
+    color: red;
+  }
+/*  padding: 0px 5px;*/
+}
+
+.banner-button-warning {
+  color: #856404;
+  &:hover {
+    color: red;
+  }
+  /*  padding: 0px 5px;*/
+}
+
+.banner-button-danger {
+  color: #721c24;
+  &:hover {
+    color: red;
+  }
+  /*  padding: 0px 5px;*/
+}
+
+.column1 {
+  //float: left;
+  width: 15%;
+  text-align: center;
+}
+
+.column2 {
+  //float: left;
+  width: 70%;
+  //padding: 14px 16px;
+  text-decoration: none;
+  p {
+    position:sticky;
+    left:0;
+    font-size: $alert-font-size;
+    margin-top: 2px;
+  }
+}
+
+.row {
+  text-align: center;
+}
+
+.banner-button {
+  font-size: $alert-font-size;
+  position:absolute;
+  right:0;
+  margin-top: -1px;
+  margin-right: 1vw;
+  background: none;
+  border: none;
+}
+
+.banner {
+  font-family: $font-family-sans-serif;
+  position:fixed;
+  width: 100%;
+  font-size: $alert-font-size;
+  text-align: center;
+  z-index: 1;
+  visibility: hidden;
+  animation-fill-mode: forwards;
+}
+
+.alert {
+  height: fit-content;
+  padding:0px 15px;
+  border-width: thin;
+  border-color: black;
+}
+
+@keyframes fadeInAndOut {
+
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  35% {
+    visibility: visible;
+    opacity: 1;
+  }
+  50% {
+    visibility: visible;
+    opacity: 0;
+  }
+  75% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+@media screen and (max-width: 360px) {
+ .banner, .banner-button {
+   font-size: calc(3px + 2.8vw);
+ }
+}
+
+@media screen and (max-width: 412px) and (min-width: 361px) {
+  .banner, .banner-button {
+    font-size: calc(3px + 2.8vw);
+  }
+}
+
+@media screen and (max-width: 810px) and (min-width: 413px) {
+  .banner, .banner-button {
+    font-size: calc(3px + 2.8vw);
+  }
+}
+
+@media screen and (max-width: 1080px) and (min-width: 811px) {
+  .banner, .banner-button {
+    font-size: calc(3px + 2.8vw);
+  }
+}
+
+@media screen and (max-width: 1280px) and (min-width: 1081px) {
+  .banner, .banner-button {
+    font-size: calc(3px + 2vw);
+  }
+}

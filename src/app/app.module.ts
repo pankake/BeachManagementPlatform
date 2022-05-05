@@ -4,7 +4,6 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http"
 
 import { AppComponent } from './app.component';
 import {RouterModule} from "@angular/router";
-import { TaskViewComponent } from './pages/task-view/task-view.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { BeachComponent } from './beach/beach.component';
@@ -25,7 +24,6 @@ import {SnackbarinterceptorService} from "./services/snackbarinterceptor.service
 @NgModule({
   declarations: [
     AppComponent,
-    TaskViewComponent,
     NavigationBarComponent,
     BeachComponent,
     WeatherComponent,

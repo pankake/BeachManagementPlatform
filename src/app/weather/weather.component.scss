@@ -1,0 +1,129 @@
+@import 'src/app/styles/global/_variables.scss';
+@import 'src/app/styles/global/_placeholders.scss';
+
+.btn-outline-dark {
+  font-size: $showcase-font-size;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input {
+  font-size: $showcase-font-size;
+  text-align: center;
+}
+
+small {
+  text-align: center;
+  font-size: $alert-font-size;
+}
+
+form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: calc(1px + 35vw);
+}
+
+.input-form-container {
+  margin-top: 1%;
+  display: flex;
+  flex-direction: column;
+}
+
+#divWeatherMain{
+  display: block;
+  border-radius: 10px;
+  margin: 15px auto 9vh;
+  width: 70vw;
+  heigth: 90vh;
+  background: black;
+  margin: $components-margin;
+  color: white;
+  font-family: $font-family-sans-serif;
+  //z-index: -1;
+}
+
+.weatherRow{
+  display:block;
+  margin:0 auto;
+  width: fit-content;
+}
+
+.sun{
+  margin-top: 20px;
+  color: yellow;
+  filter: drop-shadow( 1px 1px 10px yellow);
+  animation-name: sunMovement;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+.moon{
+  margin-top: 10px;
+  color: white;
+  filter: drop-shadow( 1px 1px 10px white);
+  animation-name: moonMovement;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+.cloudDiv{
+  margin-top: -40px;
+}
+
+.cloud{
+  color: rgb(104, 175, 197);
+  filter: drop-shadow( 1px 1px 5px rgb(104, 175, 197));
+  animation-name: cloudMovement;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+/*#input{
+  background-color: #212529;
+}*/
+
+@keyframes cloudMovement{
+/*  from{margin-left: -55px;}
+  to{margin-left: 65px;}*/
+  from{margin-left: -35%;}
+  to{margin-left: 25%;}
+}
+
+@keyframes sunMovement{
+  from{margin-left: -25%;}
+  to{margin-left: 25%;}
+}
+
+@keyframes moonMovement{
+  from{margin-left: -25%;}
+  to{margin-left: 25%;}
+}
+
+@media screen and (max-width: 360px) {
+
+}
+
+@media screen and (max-width: 412px) and (min-width: 361px) {
+
+}
+
+@media screen and (max-width: 810px) and (min-width: 413px) {
+
+
+}
+
+@media screen and (max-width: 1080px) and (min-width: 811px) {
+
+}
+
+@media screen and (max-width: 1280px) and (min-width: 1081px) {
+
+}

@@ -1,0 +1,13 @@
+<div class="banner" [ngStyle]="{'visibility': this.visibility,
+                                'animation': this.animation, 'display': this.display}">
+
+  <div [ngClass]="{'alert': true, 'alert-primary': this.notify, 'alert-warning': this.warning,
+                    'alert-danger': this.danger}" role="alert">
+    <span ng-bind="msg">{{this.msg}} <tr *ngIf="this.notify && this.msg != this.uvMsg"> <sup>km</sup>&frasl;<sub>h</sub></tr></span>
+    <button type="button" class="banner-button">
+      <span (click)="hideBanner()"><tr [ngClass]="{'banner-button-notify': this.buttonNotify,
+                                       'banner-button-warning': this.buttonWarning,
+                                       'banner-button-danger': this.buttonDanger}">x</tr></span>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,100&display=swap');
+
+/* colors */
+$turquoise: #44ddd0;
+$blue: #276dd7;
+$dark-blue: #1985e4;
+$danger: #e27e7e;
+$light: #f4f4f4;
+$primary: $blue;
+$success-bg: #DFF5CE;
+$success-text: #86B049;
+$warning-bg: #FFF3CD;;
+$warning-text: #664d03;
+$danger-bg: #F8D7DA;
+$danger-text: #842029;
+
+/* bars colors */
+$bars-color: #333;
+$topnav-a-hover-bg: #f4f4f4;
+$topnav-a-hover: #000000;
+$topnav-a-active-bg: #696969;
+
+/* box colors */
+$box-color: grey;
+
+
+/* font */
+$font-family-sans-serif: "SansSerif";
+$fontcolor: #f4f4f4;
+
+$icons-size: calc(7px + 1vw);
+$services_size: calc(7px + 2vw);
+$services_background_size: calc(11.5px + 2vw);
+//$alert-font-size: calc(5px + 1vw);
+$alert-font-size: calc(2px + 1.8vw);
+$showcase-font-size: calc(2px + 2vw);
+$carousel-font-size: calc(1.5px + 2vw);
+$beach-title-font-size: calc(3px + 2.5vw);
+$modal-text-color: #999999;
+$goldenrod: #FFCC66;
+$snackbar-font-size: calc(1px + 1.8vw);
+
+
+/* text shadow */
+$text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+
+/* border */
+$control-border-width: 2px;
+$input-border-color: transparent;
+
+/* margin top */
+$components-margin: 35px auto 9vh;
+$beach-components-margin: 60px auto 9vh;
+
+/* padding */
+$services-padding: 0 calc(1px + 1.5vw) 0 0;
+
+/* other */
+$input-shadow: none;
+
+
+
+

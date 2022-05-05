@@ -1,0 +1,155 @@
+<div class="wrap-carousel" *ngIf="numberOfBeaches > 0">
+
+  <ngb-carousel class="ngb-carousel"
+    [showNavigationArrows]="true"
+    [showNavigationIndicators]="false"
+    [interval]="12000"
+    [keyboard]="true"
+    [pauseOnHover]="true"
+    [wrap]="true"
+    [activeId]="'secondSlide'"
+  >
+    <ng-template ngbSlide class="list-menu-item" *ngFor="let beach of beaches">
+
+      <div class="card" style="">
+        <img src="assets/{{beach.picture}}.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-title">{{beach.title}}</p>
+          <div class="services">
+            <p class="icon" *ngIf="beach.services.animals">  <fa-icon [icon]="faDog"></fa-icon> </p>
+            <p class="icon" *ngIf="beach.services.bar"> <fa-icon [icon]="faCocktail"></fa-icon> </p>
+            <p class="icon" *ngIf="beach.services.animations"> <fa-icon [icon]="faMask"></fa-icon> </p>
+            <p class="icon" *ngIf="beach.services.beach_volley"> <fa-icon [icon]="faVolleyball"></fa-icon> </p>
+            <p class="icon" *ngIf="beach.services.wifi"> <fa-icon [icon]="faWifi"></fa-icon> </p>
+
+            <p class="icon" *ngIf="beach.services.restaurant"> <fa-icon [icon]="faHotdog"></fa-icon> </p>
+            <p class="icon" *ngIf="beach.services.accessible_to_disabled_people">   <fa-icon [icon]="faWheelchair"></fa-icon> </p>
+          </div>
+          <p class="card-text"><p>{{beach.address}}, {{beach.city}}</p>
+
+          <div class="btn-container">
+            <button class="btn btn-outline-dark btn-rounded-corners" (click)="open(modal)">See Profile</button>
+            <button class="btn btn-outline-danger btn-rounded-corners" (click)="open(modalDelete)">Delete Beach</button>
+          </div>
+
+        </div>
+
+        <ng-template #modal let-modal>
+          <div class="modal-header">
+            <a class="modal-title" id="modal-basic-title">{{beach.title}}</a>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="services-modal modal-title">
+              <p class="services-modal-header">Gallery</p>
+
+              <ngb-carousel class=""
+                [showNavigationArrows]="true"
+                [showNavigationIndicators]="false"
+                [interval]="12000"
+                [keyboard]="true"
+                [pauseOnHover]="true"
+                [wrap]="true"
+                [activeId]="'secondSlide'"
+              >
+                <ng-template ngbSlide class="">
+                  <div class="modal-img-container">
+                    <div class="modal-img">
+                      <img src="assets/{{beach.gallery.gallery_1}}.jpg" style="max-width: 100%;max-height: 60%;">
+                    </div>
+                  </div>
+                </ng-template>
+
+                <ng-template ngbSlide class="">
+                  <div class="modal-img-container">
+                    <div class="modal-img"><img src="assets/{{beach.gallery.gallery_2}}.jpg" style="max-width: 100%;
+                    max-height: 60%;">
+                    </div>
+                  </div>
+                </ng-template>
+
+                <ng-template ngbSlide class="">
+                  <div class="modal-img-container">
+                    <div class="modal-img"><img src="assets/{{beach.gallery.gallery_3}}.jpg" style="max-width: 100%;max-height: 60%;">
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-carousel>
+
+              <p class="services-modal-header">Description</p>
+              <p class="description">Lorem ipsum dolor sit amet. Est veniam iure et asperiores dolores sit sint tempore ut quas. Et sequi sint aut excepturi corporis id obcaecati unde aut optio mollitia. Est voluptatem assumenda cum Quis labore aut explicabo rerum.</p>
+              <p class="services-modal-header">Services</p>
+              <div class="services-modal-animals" *ngIf="beach.services.animals">
+                <p class="icon-modal"> <fa-icon [icon]="faDog"></fa-icon></p>
+                <p style="color: #999999">Pet's Beach</p>
+              </div>
+
+              <div class="services-modal-bar" *ngIf="beach.services.bar">
+                <p class="icon-modal"> <fa-icon [icon]="faCocktail"></fa-icon></p>
+                <p style="color: #999999">Bar</p>
+              </div>
+
+              <div class="services-modal-animations" *ngIf="beach.services.animations">
+                <p class="icon-modal"> <fa-icon [icon]="faMask"></fa-icon></p>
+                <p style="color: #999999">Animation</p>
+              </div>
+
+              <div class="services-modal-beach_volley" *ngIf="beach.services.beach_volley">
+                <p class="icon-modal"> <fa-icon [icon]="faVolleyball"></fa-icon></p>
+                <p style="color: #999999">Beach Volley</p>
+              </div>
+
+              <div class="services-modal-wifi" *ngIf="beach.services.wifi">
+                <p class="icon-modal"> <fa-icon [icon]="faWifi"></fa-icon></p>
+                <p style="color: #999999">Wifi</p>
+              </div>
+
+              <div class="services-modal-restaurant" *ngIf="beach.services.restaurant">
+                <p class="icon-modal"> <fa-icon [icon]="faHotdog"></fa-icon></p>
+                <p style="color: #999999">Restaurant</p>
+              </div>
+
+              <div class="services-modal-disabled_people" *ngIf="beach.services.accessible_to_disabled_people">
+                <p class="icon-modal"> <fa-icon [icon]="faWheelchair"></fa-icon></p>
+                <p style="color: #999999">Accessible to disabled people</p>
+              </div>
+
+              <p class="services-modal-header">Where we are</p>
+              <agm-map [latitude]="getLatitude(beach)" [longitude]="getLongitude(beach)">
+                <agm-marker [latitude]="getLatitude(beach)" [longitude]="getLongitude(beach)"></agm-marker>
+              </agm-map>
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="modal-address">
+              <a>{{beach.address}}, {{beach.city}}<br></a>
+              <a>T: +39 3921234567, e-mail: xxxxx.xxxx@studio.unibo.it</a>
+            </div>
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+          </div>
+        </ng-template>
+        <ng-template #modalDelete let-modal>
+          <div class="modal-header">
+            <a class="modal-title" >Delete Beach</a>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="services-modal modal-title">
+              <p class="services-modal-header">Delete</p>
+              <p class="description">Are you sure you want to delete {{beach.title}}?</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark btn-outline-dark" (click)="modal.close('Save click')">Dismiss</button>
+            <button type="button" class="btn btn-outline-danger" (click)="modal.close('Save click')" (click)="deleteBeach(beach)">Delete</button>
+          </div>
+        </ng-template>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
