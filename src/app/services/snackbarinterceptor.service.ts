@@ -1,4 +1,4 @@
-import { Injectable, Injector } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpRequest,
   HttpHandler,
   HttpEvent,
@@ -26,28 +26,14 @@ export class SnackbarinterceptorService implements HttpInterceptor {
     return next.handle(request).pipe(
       tap(e => {
         if (request.method == "GET") {
-          if(request.url.includes(config.API_OPENWEATHERMAP)) {
-            if (e instanceof HttpResponse && e.status == 200)
-              this.snackBar.open(config.SUCCESS_OPENWEATHERMAP, 'close',
-                { duration: this.successTime, panelClass: 'successSnack' });
-          }
-          else if(request.url.includes(config.URL_BEACHES)) {
-/*            if (e instanceof HttpResponse && e.status == 200) {
-              this.snackBar.open(config.SUCCESS_BEACHES, 'close',
-                { duration: 2000, panelClass: 'successSnack' });
-            }*/
+          if(request.url.includes(config.URL_BEACHES)) {
             if (e instanceof HttpResponse && e.status == 204) {
               this.snackBar.open(config.WARNING_EMPTY_BEACH_LIST, 'close',
                 {duration: this.warningTime, panelClass: 'warningSnack'});
             }
           }
           else if(request.url.includes(config.API_WEATHERBIT)) {
-            if (e instanceof HttpResponse && e.status == 200)
-              setTimeout(() => {
-                this.snackBar.open(config.SUCCESS_WEATHERBIT, 'close',
-                  { duration: this.successTime, panelClass: 'successSnack' });
-              }, 2000);
-            else if (e instanceof HttpResponse && e.status == 204) {
+            if (e instanceof HttpResponse && e.status == 204) {
               setTimeout(() => {
                 this.snackBar.open(config.ERROR_CITY_NOT_FOUND_WB, 'close',
                   { duration: this.errorTime, panelClass: 'errorSnack' });
