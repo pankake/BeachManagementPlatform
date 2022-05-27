@@ -13,14 +13,6 @@ export class BeachService {
       return this.webService.get('beaches');
   }
 
-  createBeach(title: string) {
-    return this.webService.post('beaches', {title});
-  }
-
-  getBeach(title: string) {
-    return this.webService.get(`beaches/${title}`);
-  }
-
   deleteBeach(beachId: string) {
     return this.webService.delete(`beaches/${beachId}`);
   }

@@ -1,7 +1,7 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Config file
-/src/assets/config.ts
+#/src/assets/config.ts
 
 # Compiled output
 /dist
