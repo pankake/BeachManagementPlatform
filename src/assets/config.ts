@@ -27,7 +27,7 @@ export default {
   ERROR_DELETE_BEACH:           'ERROR while deleting the beach. The deletion was not successful',
 
   /* WARNING MESSAGES */
-  WARNING_EMPTY_BEACH_LIST:     'WARNING there are no more beaches available',
+  WARNING_EMPTY_BEACH_LIST:     'WARNING there are no more cards available',
 
   /* SUCCESS_MESSAGES */
   SUCCESS_WEATHERBIT:           'Weatherbit service data received successfully',
