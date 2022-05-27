@@ -21,7 +21,7 @@ const Beach = require('./database/models/beach');
 const __views = './views';
 
 global.appRoot = path.resolve(__dirname);
-mongoose.connect('mongodb://localhost/myweather_db', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost/beachmp_db', { useNewUrlParser: true, useUnifiedTopology: true });
 app.use(cors())
 app.use(express.json());
 
