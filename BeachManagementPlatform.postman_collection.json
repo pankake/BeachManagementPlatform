@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "833d8ddb-60bc-4f8f-86dd-4aceeba819f9",
+		"name": "BeachManagementPlatform",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all beaches",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/beaches",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"beaches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save beach",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"Bagno 25\",\n    \"city\": \"Rimini\",\n    \"address\": \"viale Regina Margherita\",\n    \"services\": {\n        \"bar\": false,\n        \"restaurant\": false,\n        \"animals\": true,\n        \"accessible_to_disabled_people\": true,\n        \"hot_shower\": false,\n        \"wifi\": false,\n        \"beach_volley\": true,\n        \"cabins\": false,\n        \"animations\": false,\n        \"play_area\": false\n    },\n    \"picture\": \"bagno-25\",\n    \"gallery\": {\n        \"gallery_1\": \"gallery_1\",\n        \"gallery_2\": \"gallery_2\",\n        \"gallery_3\": \"gallery_3\"\n    },\n        \"coordinates\": {\n        \"lat\": \"44.06000563305125\",\n        \"lng\": \"12.59232497072539\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/beaches",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"beaches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get from title",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/beaches/Bagno 23",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"beaches",
+						"Bagno 23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update from title",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"services\": {\n        \"bar\": false,\n        \"restaurant\": false,\n        \"animals\": true,\n        \"cards\": false,\n        \"hot_shower\": false,\n        \"wifi\": false,\n        \"beach_volley\": true,\n        \"cabins\": false,\n        \"animations\": false,\n        \"play_area\": false,\n        \"accessible_to_disabled_people\": false\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/beaches/Bagno 25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"beaches",
+						"Bagno 25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete beach from name",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/beaches/Bagno 100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"beaches",
+						"Bagno 100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete beach from Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/beaches/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"beaches",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
