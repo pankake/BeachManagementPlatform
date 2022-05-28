@@ -125,25 +125,13 @@ p {
 
 }
 
-.card-img-top {
-  max-height: 500px;
-}
-
 .card-body {
   justify-content: flex-start;
   margin: 0;
   padding: 0;
 }
 
-.card {
-  /*  left: 50%;
-  transform: translate(-50%);*/
-  margin: 5% 5% 3.5%;
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
+
 
 .ngb-carousel {
   //max-width: 700px;
@@ -158,6 +146,7 @@ p {
 }
 
 .wrap-carousel {
+  max-width: 800px;
   width: 70vw;
   height: fit-content;
 
@@ -171,6 +160,21 @@ p {
   font-family: $font-family-sans-serif;
   border: 10px;
   border-radius: 10px;
+}
+
+.card-img-top {
+  max-height: 500px;
+  max-width: 800px;
+}
+
+.card {
+  /*  left: 50%;
+  transform: translate(-50%);*/
+  margin: 5% 5% 3.5%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .carousel-inner {
