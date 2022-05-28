@@ -27,6 +27,23 @@
   z-index: 21;
 }
 
+.modal-btn {
+  position: absolute;
+  right: 0;
+}
+
+.modal-address {
+  color: $fontcolor;
+  font-family: $font-family-sans-serif;
+  font-size: $alert-font-size;
+}
+
+.row {
+  width: 100%;
+}
+
+
+
 .btn-outline-danger {
   width: fit-content;
   display: inline-block;
@@ -362,13 +379,6 @@ agm-map {
   background-color: black;
   color: $fontcolor;
   font-family: $font-family-sans-serif;
-}
-
-.modal-address {
-  color: $fontcolor;
-  font-family: $font-family-sans-serif;
-  font-size: $alert-font-size;
-  text-align: center;
 }
 
 

@@ -124,11 +124,19 @@
             </div>
           </div>
           <div class="modal-footer">
-            <div class="modal-address">
-              <a>{{beach.address}}, {{beach.city}}<br></a>
-              <a>T: +39 3921234567, e-mail: xxxxx.xxxx@studio.unibo.it</a>
+            <div class="row">
+              <div class="col-8">
+                <div class="modal-address">
+                  <a>{{beach.address}}, {{beach.city}}<br></a>
+                  <a>T: +39 3921234567, xxxx.xxx@studio.unibo.it</a>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="modal-btn">
+                  <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+                </div>
+              </div>
             </div>
-            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
           </div>
         </ng-template>
         <ng-template #modalDelete let-modal>
