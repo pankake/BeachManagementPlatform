@@ -65,7 +65,7 @@ p {
   border-style: solid;
   border-width: thin;
   margin-right: 1%;
-  margin-bottom: 2.5%;
+  margin-bottom: 1%;
   width: $services_background_size; //$services_size//calc(1.5vw + 10px);
 }
 
@@ -109,8 +109,7 @@ p {
 }
 
 .card-img-top {
-/*  width: 50%;
-*/
+  max-height: 500px;
 }
 
 .card-body {
