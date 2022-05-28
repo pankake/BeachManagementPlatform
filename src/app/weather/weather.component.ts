@@ -124,7 +124,11 @@ export class WeatherComponent implements OnInit {
     this.WeatherbitData.uv =  Math.round(resWeatherbit.uv);
 
     this.WeatherbitData.description =  resWeatherbit.weather.description;
-    this.WeatherbitData.precipitation =Number.parseFloat(resWeatherbit.precip).toFixed(2);
+
+    if(resWeatherbit.precip == null)
+      this.WeatherbitData.precipitation = 0;
+    else
+      this.WeatherbitData.precipitation =Number.parseFloat(resWeatherbit.precip).toFixed(2);
 
     this.WeatherbitData.city_name = resWeatherbit.city_name;
   }
