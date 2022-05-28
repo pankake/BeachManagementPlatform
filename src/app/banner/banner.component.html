@@ -3,11 +3,18 @@
 
   <div [ngClass]="{'alert': true, 'alert-primary': this.notify, 'alert-warning': this.warning,
                     'alert-danger': this.danger}" role="alert">
-    <span ng-bind="msg">{{this.msg}} <tr *ngIf="this.notify && this.msg != this.uvMsg"> <sup>km</sup>&frasl;<sub>h</sub></tr></span>
-    <button type="button" class="banner-button">
+
+    <div class="row">
+      <div class="col-11">
+        <span ng-bind="msg">{{this.msg}} <tr *ngIf="this.notify && this.msg != this.uvMsg"> <sup>km</sup>&frasl;<sub>h</sub></tr></span>
+      </div>
+      <div class="col-1">
+        <button type="button" class="banner-button">
       <span (click)="hideBanner()"><tr [ngClass]="{'banner-button-notify': this.buttonNotify,
                                        'banner-button-warning': this.buttonWarning,
                                        'banner-button-danger': this.buttonDanger}">x</tr></span>
-    </button>
+        </button>
+      </div>
+    </div>
   </div>
 </div>

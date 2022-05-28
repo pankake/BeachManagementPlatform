@@ -76,10 +76,10 @@ function elaborateUVData(socket, city, uv) {
   else if (parseInt(uv) >= 3 && parseInt(uv) < 7)
     sendUVAlert(socket, elaborateUVMsg(ALERTS.warning, UV_INTESITY.medium, city, uv), ALERTS.warning)
 
-  else if (parseInt(uv) >= 7 && parseInt(uv) < 11)
+  else if (parseInt(uv) >= 7 && parseInt(uv) < 10)
     sendUVAlert(socket, elaborateUVMsg(ALERTS.warning, UV_INTESITY.high, city, uv), ALERTS.warning)
 
-  else if (parseInt(uv) >= 11)
+  else if (parseInt(uv) >= 10)
     sendUVAlert(socket, elaborateUVMsg(ALERTS.danger, UV_INTESITY.very_high, city, uv), ALERTS.danger)
 }
 
@@ -154,7 +154,7 @@ function elaborateUVMsg(type, text, city, uv) {
   else if(type == ALERTS.warning)
     msg_top = ': protect yourself with sunscreen';
   else if(type == ALERTS.danger)
-    msg_top = ': avoid sun exposure';
+    msg_top = ': protect yourself with sunscreen and avoid sun exposure';
 
   console.log("msg top " + msg_top);
 

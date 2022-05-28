@@ -25,25 +25,6 @@
   /*  padding: 0px 5px;*/
 }
 
-.column1 {
-  //float: left;
-  width: 15%;
-  text-align: center;
-}
-
-.column2 {
-  //float: left;
-  width: 70%;
-  //padding: 14px 16px;
-  text-decoration: none;
-  p {
-    position:sticky;
-    left:0;
-    font-size: $alert-font-size;
-    margin-top: 2px;
-  }
-}
-
 .row {
   text-align: center;
 }
@@ -67,6 +48,10 @@
   z-index: 1;
   visibility: hidden;
   animation-fill-mode: forwards;
+}
+
+.row {
+  width: 100%;
 }
 
 .alert {
