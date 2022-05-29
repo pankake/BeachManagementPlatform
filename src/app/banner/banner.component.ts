@@ -67,7 +67,7 @@ export class BannerComponent implements OnInit {
     this.alertService.onNewMessage()
       .subscribe(msg => {
       // @ts-ignore
-      console.log('got a msg from bannerino: ' + msg.message + ', ' + msg.alertType);
+      console.log('got a msg: ' + msg.message + ', ' + msg.alertType);
 
       if(this.enableAnimation) {
         // @ts-ignore
@@ -83,7 +83,7 @@ export class BannerComponent implements OnInit {
     this.alertService.onNewMessageUV()
       .subscribe(msg => {
         // @ts-ignore
-        console.log('got UV data from bannerino: ' + msg.message + ', ' + msg.alertType);
+        console.log('got UV message: ' + msg.message + ', ' + msg.alertType);
         if(this.writeUVMessage) {
           // @ts-ignore
           this.uvMsg = msg.message;
