@@ -23,6 +23,7 @@ export class WeatherComponent implements OnInit {
   faCloudShowersHeavy: any = faCloudShowersHeavy;
   formdata: any;
   city: any;
+  displayLoadingIcon: any;
 
   constructor(private http: HttpClient, private handler: HttpHandler, private webService: WebService,
               private alertService: AlertService, private snackBar: MatSnackBar) { }
@@ -35,6 +36,7 @@ export class WeatherComponent implements OnInit {
 
     this.WeatherbitData = {};
     this.OpenweathermapData = {};
+    this.displayLoadingIcon = 'inline-block';
 
     this.getPosition().subscribe(pos => {
       this.position = pos;
@@ -118,6 +120,7 @@ export class WeatherComponent implements OnInit {
 
     let resWeatherbit = data.data[0];
 
+    this.displayLoadingIcon = 'none';
     this.WeatherbitData.pod = resWeatherbit.pod;
     this.WeatherbitData.clouds = resWeatherbit.clouds;
     this.WeatherbitData.umidity =  resWeatherbit.rh;
@@ -142,6 +145,7 @@ export class WeatherComponent implements OnInit {
   }
 
   onClickSubmit(data: any) {
+    this.displayLoadingIcon = 'inline-block';
     this.city = data.city;
     console.log("City: " +  this.city);
 

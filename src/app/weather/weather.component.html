@@ -1,3 +1,4 @@
+<div class="lds-roller" [ngStyle]="{'display': this.displayLoadingIcon}"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 <div id="divWeatherMain">
   <div *ngIf="WeatherbitData.pod == 'd'" class="weatherRow">
     <i class="fa fa-4x fa-sun-o sun"></i>
@@ -37,7 +38,7 @@
     Moderate rain: Greater than 0.5 mm per hour, but less than 4.0 mm per hour.
     Heavy rain: Greater than 4 mm per hour, but less than 8 mm per hour.
     Very heavy rain: Greater than 8 mm per hour.-->
-  <div class="weatherRow" style="font-size: calc(0.5em + 1vw);margin-top: 10px;text-align: center;">Precipitation: {{WeatherbitData.precipitation}}<a *ngIf="OpenweathermapData.temp_celcius != null"><sup>mm</sup>&frasl;<sub>h</sub></a>
+  <div class="weatherRow" *ngIf="WeatherbitData.precipitation > 0" style="font-size: calc(0.5em + 1vw);margin-top: 10px;text-align: center;">Precipitation: {{WeatherbitData.precipitation}}<sup>mm</sup>&frasl;<sub>h</sub>
     <i *ngIf="WeatherbitData.precipitation == 0">
     </i>
     <i *ngIf="WeatherbitData.precipitation > 0 && WeatherbitData.precipitation < 0.5">
@@ -53,8 +54,8 @@
       - Very Heavy rain
     </i>
   </div>
-  <div class="weatherRow" style="font-size: calc(0.5em + 1vw);">Humidity: {{OpenweathermapData.humidity}}<a *ngIf="OpenweathermapData.temp_celcius != null">%</a></div>
-  <div class="weatherRow" style="font-size: calc(0.5em + 1vw);">Cloudy: {{WeatherbitData.clouds}}<a *ngIf="OpenweathermapData.temp_celcius != null">%</a></div>
-  <div class="weatherRow" style="font-size: calc(0.5em + 1vw);margin-top: 5px;">Wind speed: {{OpenweathermapData.wind_spd}}<a *ngIf="OpenweathermapData.temp_celcius != null"><sup>km</sup>&frasl;<sub>h</sub></a></div>
-  <div class="weatherRow" style="font-size: calc(0.5em + 1vw);">UV Index: {{WeatherbitData.uv}}</div>
+  <div class="weatherRow" *ngIf="OpenweathermapData.humidity != null" style="font-size: calc(0.5em + 1vw);">Humidity: {{OpenweathermapData.humidity}}%</div>
+  <div class="weatherRow" *ngIf="WeatherbitData.clouds != null" style="font-size: calc(0.5em + 1vw);">Cloudy: {{WeatherbitData.clouds}}%</div>
+  <div class="weatherRow" *ngIf="OpenweathermapData.wind_spd != null" style="font-size: calc(0.5em + 1vw);margin-top: 5px;">Wind speed: {{OpenweathermapData.wind_spd}}<sup>km</sup>&frasl;<sub>h</sub></div>
+  <div class="weatherRow" *ngIf="WeatherbitData.uv != null" style="font-size: calc(0.5em + 1vw);">UV Index: {{WeatherbitData.uv}}</div>
 </div>
