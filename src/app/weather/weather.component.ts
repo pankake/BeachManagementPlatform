@@ -168,7 +168,7 @@ export class WeatherComponent implements OnInit {
             observer.next(value);
             observer.complete();
           },
-          error => observer.error(error));
+          error => observer.error(this.displayLoadingIcon = 'none'));
     });
   }
 
@@ -180,7 +180,7 @@ export class WeatherComponent implements OnInit {
             observer.next(value);
             observer.complete();
           },
-          error => observer.error(error));
+          error => observer.error(this.displayLoadingIcon = 'none'));
     });
   }
 }
